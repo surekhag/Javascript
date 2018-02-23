@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <script type="text/javascript" src="cookies.js"></script>
+<script>
+var username;
+function greetUser()
+{
+    username =readCookie("username");
+console.log(username);
+ if (username){
+alert('Hi '+ username + ', i missed you !');
+ }
+ else
+ {
+     alert('Hello, we rock !');
+ }
+    
+    //alert('Hello, this is surekha!');
+
+}
+function resizeRock()
+{
+    if(username)
+    {
+        alert('Hi '+ username + ' This name is from Cookie !!');
+    }
+    else
+    {
+    username = prompt("Enter your name","enter your name here suri");
+
+   if (username)
+{
+    alert('It is good to meet you ' + username + '.');
+    
+    writeCookie('username', username , 5*365);        
+    alert('Done writting '+ username);
+}
+}
+
+document.getElementById('img1').src='../../images/blue-orchids.jpg';
+
+setTimeout("document.getElementById('img1').src='../../images/Logo.png'; ",3000);
+document.getElementById('msg').innerHTML="Below image will change in 3 seconds";
+setTimeout("document.getElementById('msg').innerHTML='';" ,3000);
+
+
+}
+
+</script>
+</head>
+
+<body onload="greetUser()">
+
+ <p id ="msg"></p>
+<div>
+    Click on this image to check Username from Cookie : <br />
+    <img id="img1" src="../../images/Logo.png" width="10%" title="Click on image" onclick="resizeRock()"/>         
+</div>
+
+</body>
+</html> 

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Decision Making</title>
+    Decison making Demo : <br/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script>
+    function calc()
+    {
+
+        
+        document.getElementById('txt').innerHTML="";
+        var a = prompt('Enter number :','Enter number here');
+        if(!isNaN(a))
+        {
+            //alert(a);
+           if(a%2==0)
+            {
+            //alert('Number is even');
+            document.getElementById('txt').innerHTML= "You entered number "+a + " which is even number";
+            
+           }
+            else 
+           {
+         
+            //alert('Number is odd');
+            document.getElementById('txt').innerHTML= "You entered number "+a + " which is odd number";
+            }
+         }
+     else{
+        document.getElementById('txt').innerHTML="Enter Valid number";
+         }
+       
+    }
+    
+        </script>
+</head>
+<body onload="calc()">
+    
+ 
+    <p id = "txt"></p>
+    Body Loading completed !
+    
+</body>
+</html>

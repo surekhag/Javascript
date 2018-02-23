@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns=“http://www.w3.org/1999/xhtml” lang=“en” xml:lang=“en” >
+<head >
+        <link type="text/css" rel="stylesheet" href="../Related-resources/default.css" />
+    <title>    
+The way Form works 
+</title>
+<body>
+
+<h1>Bean  Machine </h1><br/><br/>
+Fill any one form among two <br/><br/>
+
+A. GET METHOD : Check URL <br/><br/><br/>
+<form method="get">
+
+    <select name="beans">
+            <option value="brown"> Brown Bolivia</option>
+        <option value="house">House Blend </option>
+<option value="Kenya">Kenya</option>
+<option value="organic">Organic Guatemala</option>
+
+</select><br/> <br/>
+Type : <br/>
+<input type="radio" name="beantype" value="whole" />Whole bean  <br/>
+<input type="radio" name="beantype" value="ground" />Ground   <br/><br/>
+
+
+Extras :<br/>
+<input type="checkbox" name="extras[]" value="giftwrap" checked />Gift Wrap <br/>
+<input type="checkbox" name="extras[]" value="catalog" />Include catalog with Order <br/><br/>
+
+Ship to : <br/>
+Name: <input id="name1" type="text" name="shipname" /> <br /><br />
+Address: <input type="text" name="address" /> <br /><br />
+City: <input type="text" name="city" /> <br /><br />
+State: <input type="text" name="state" /> <br /><br />
+Zip: <input type="text" name="zip" /> <br /><br />
+
+Customer Comments :<br/><br/>
+<textarea name="comments" rows="8" cols"20">  </textarea><br/>
+<br/><br/>
+<input type="submit" value="Order Now" onclick="display(this.form)"/>
+
+</form>
+
+
+<script>
+
+    // action="http://www.starbuzzcoffee.com/processorder.php"
+function display(theForm)
+{
+    console.log()
+alert(theForm["shipname"].value);
+}
+</script>
+
+    </body>
+    </html>

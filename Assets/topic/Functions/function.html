@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Function Introduction</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript">
+    
+    var a,b;
+    var add= function(a,b)
+    {
+
+return a+b;
+    }
+
+    var sub= function(a,b)
+    {
+
+return a-b;
+    }
+
+    var mul= function(a,b)
+    {
+
+return a*b;
+    }
+
+    var div= function(a,b)
+    {
+
+return a/b;
+    }
+
+function display()
+{
+a=7, b=5;
+    document.getElementById("add").innerHTML= " Addition is  : " + add(12,3)
+    + " <br>Subtraction is  : " + sub(a,b)
+    +" <br>Multiplication is : "+ mul(a,b)
+        +" <br>Division is  : "+div(574,2);
+}    
+    </script>
+</head>
+<body onload="display()">
+    <p id="add"></p>
+
+
+</body>
+</html>

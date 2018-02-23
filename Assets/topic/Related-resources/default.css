@@ -1,0 +1,96 @@
+body {
+    font-size: small;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    color: #007;
+    }
+    h1, h2 {
+    color: #007e7e;
+    }
+    h1 {
+    font-size: 150%;
+    }
+    h2 {
+    font-size: 130%;
+    }
+   q {
+        font-style: italic;
+    }
+    .guarantee {
+line-height: 1.9em;
+font-style: italic;
+font-family: Georgia, “Times New Roman”, Times, serif;
+color: #444444;
+border-color: black;
+border-width: 1px;
+border-style: ridge;
+background-color: #a7cece;
+padding: 25px;
+margin: 30px;
+background-image: url(../../images/logo.png);
+padding-left: 480px;
+margin-right: 250px;
+background-repeat: no-repeat;
+background-position: top left;
+
+}
+p#head
+{
+font-size: large;
+font-weight:  bold;
+
+}
+
+p#desc
+{
+font-size: small;
+}
+:link {
+    color: green;
+    }
+:visited {
+    color: red;
+    }
+:hover {
+    color:brown;
+    }
+
+
+    .test
+    {
+        width: 50%;
+        float: left;   
+    }
+
+
+    #layout {
+        line-height: 1.9em;
+        font-family: Georgia, “Times New Roman”, Times, serif;
+        color: #444444;
+   
+    background-repeat: no-repeat;
+   width: 400px;
+    float: right;
+
+        }
+
+        #p-set
+        {
+            clear: right;
+        }
+   
+        .absolute{
+            position: absolute;
+          
+top: 180px;
+right: 10px;
+width: 200px;
+clear: right;
+        }
+
+        .jello
+        {
+         
+            margin:auto;
+            padding: auto;
+            background: #007e7e;
+        }

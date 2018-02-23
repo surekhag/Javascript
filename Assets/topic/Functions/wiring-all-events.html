@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Function Callbacks</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+    <script>
+     
+
+           
+    </script>
+</head>
+<body>
+    <p id="call">Hello - For loop is runing for deplay..This msg will change in sometime !!</p>
+    <img id="img1" src="../../images/logo.png" >
+    <p id="img2">Click Image to see result !</p>
+
+    <script "text/javascript">
+
+
+window.onload= function(){
+                            
+           display();
+            console.log( document.getElementById("img1"));
+          
+            document.getElementById("img1").onclick=function(env)
+            {
+                calculate(7,5);
+            };
+        }
+        
+        function display()
+            {
+
+               for(var a=0;a<=1000000000;a++)
+                {
+
+                }
+                document.getElementById("call").innerHTML="Callback functions learning Started !";
+            }
+            function calculate(a,b)
+            { 
+               var c=a*b;
+                document.getElementById("img2").innerHTML="Calculation Done is  : " + c;   
+            }
+       
+            </script>
+</body>
+</html>

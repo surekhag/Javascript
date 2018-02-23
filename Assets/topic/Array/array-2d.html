@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>TWO DIMENTIONAL ARRAY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script type="text/javascript">
+    var arr=[];
+    var arr1=new Array("a","b","c");
+     var arr2= ["a","b","c","d","e"];
+     var points = [40, 100, 1, 5, 25, 10];
+     var fruits = ["Banana", "Orange", "Apple", "Mango"];
+
+
+    function initialise_ar()
+    {
+        var i, j, msg="";
+        //var arr=[];
+        j=10;
+        for(i=0;i<5;i++)
+        {
+            //for(j=0;j<;j++)
+            {
+                arr[i]=j;
+                msg += "arr["+i+"]="+ arr[i] + "<br/> ";
+                document.getElementById("display").innerHTML=msg + " Array length is : "+ arr.length;
+                j++;
+                //if(j==4) break;
+            }
+        }
+
+    }
+    function two_initialise()
+    {
+        var i, j,k, msg="";
+        //var arr1=new Array("a","b","c");
+        //var arr2= ["a","b","c","d","e"];
+        var person = {firstName:"John", lastName:"Doe", age:46};
+        k=1;
+        
+        for(i=0;i<3;i++)
+        {
+            for(j=0;j<3;j++)
+            {
+              //  document.getElementById("display_2d").innerHTML= "Hello";
+               // arr[i][j]=k;
+               document.getElementById("display_2d").innerHTML= " Array1 Length is : " + arr1.length + " Array1 Elements are : "+arr1 +"<br> Array2 Length is : "+arr2.length+" Array2 Elements are :"+ arr2 ;
+             //   msg = "arr["+i+"]["+j+"]="+ arr[i][j] + "<br/> ";
+                //document.getElementById("display_2d").innerHTML=msg + " Array length is : "+ arr.length;
+
+               //document.getElementById("display_2d").innerHTML= "Hello";
+                k++;
+                //if(j==4) break;
+            }
+        }
+
+    }
+
+    function three_initialise()
+    {
+        var person = [];
+person["firstName"] = "John";
+person["lastName"] = "Doe";
+person["age"] = 46;
+var x = person.length;         // person.length will return 0
+var y = person[0];
+document.getElementById("display_3").innerHTML="<br/>First name : "+ person["firstName"] + " Last Name : " +person["lastName"]+ " Age : "+person["age"]; 
+
+
+    }
+
+    function check()
+    {
+
+var msg1=" <br>If arr is Array ?"+ Array.isArray(arr)+" <br>If arr1 is Array ?"+ Array.isArray(arr1)+" <br>If arr2 is Array ?"+ Array.isArray(arr2)+" <br>";
+var msg2="<br> Type of arr is :" +typeof arr +"<br> Type of arr1 is :" +typeof arr1 +"<br> Type of arr2 is :" +typeof arr2 +"<br>"  ;
+var msg3="<br>Converting array to string :arr.toString() :    "+ arr.toString() + "<br> Join arrays with separator: arr.join('$')"+ arr.join("...");
+var msg4="<br> Popping: removing last element: arr.pop():    "+ arr.pop() + " Result : "+ arr+ "<br>"+
+"Pushing: Adding last element: arr.push('test'):    "+ arr.push("added-last") + " Result : "+ arr+ "<br>"
++"Shifing: Removing first instead of first : arr.shift():    "+ arr.shift() + " Result : "+ arr+ "<br>"
++"UnShifing: Adding element at start : arr.unshift('added-at-start'):  "+ arr.unshift("start-added") + " Result : "+ arr+ "<br>"
++"Deleting : Deleting element :  delete arr[0]:   "+ delete arr[0] + " Result : "+ arr+ "<br>"
++"Slicing an array: Add new element:  <br> Original Fruits :"+ fruits + "<br>fruits.splice(1, 1, 'lemon', 'kiwi'): "+ fruits.splice(1, 1, "Lemon", "Kiwi") + " Result :   " + fruits +  "<br>"
++ "<br> Sorting array Fruits :" +fruits.sort()
++ "<br> Reversing an array Fruits :" +fruits.reverse()
++ "<br> Numeric sorting  :" +points.sort(function(a, b){return a - b})
++ "<br> Mergeing arrays : arr and arr1 :" + arr.concat(arr1);
+
+document.getElementById("chk").innerHTML=msg1 + " "+ msg2+ " "+ msg3 + " "+ msg4;
+
+
+
+    }
+
+    </script>
+</head>
+<body onload="initialise_ar(); two_initialise(); three_initialise(); check()">
+    <h2> Different ways of initializing Array : <br></h2>
+    <p id="display"></p>
+    <p id="display_2d"></p>
+    <p id="display_3"></p>
+    
+    <h2> Array Methods : <br></h2>
+     <p id="chk"></p>
+    
+</body>
+</html>
