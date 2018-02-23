@@ -1,0 +1,31 @@
+    <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Array </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script type="text/javascript">
+    var arr= new Array(4,5,6);
+    var msg=" Print Single Dimention array : ";
+    var msg1=" Print Multiple Dimention array : ";
+    function display()
+    {
+var arr2=[1,2,3,4];
+for(var a=0; a<arr.length; a++)
+{
+     msg+=  arr[a]+" ";    
+}
+document.getElementById("arr1").innerHTML=msg;
+    }
+    
+  
+
+    </script>
+</head>
+<body onload="display()">
+    <p id="arr1"> </p>
+    
+</body>
+</html>

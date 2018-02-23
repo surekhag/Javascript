@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title> Decision Making</title>
+    Decison making Demo TEST: <br/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    
+    <script type="text/javascript"> 
+function test()
+{
+    alert('Hello, we rock !');
+    alert('This is inside script');
+}
+
+    function calc()
+    {
+        alert('This is inside javascript code');
+        alert('hello Surekha');
+        document.getElementById('txt').innerHTML="hello inside JS";
+        var a = prompt('Enter value (1,2,3,a,A,b,B only ) :','Enter number here');
+        console.log(a);
+
+        switch(a)
+        {
+            case "1":
+            document.getElementById('txt').innerHTML= "Text Matched ! You entered number :  ONE ";
+            break;
+
+            case "2":
+            document.getElementById('txt').innerHTML= "Text Matched ! You entered number : TWO ";
+            break;
+
+            case "3":
+            document.getElementById('txt').innerHTML= "Text Matched ! You entered number : THREE  ";
+            break;
+
+
+            case "b":
+
+            document.getElementById('txt').innerHTML= "Text Matched ! You Entered Character : b "; 
+            break;
+           
+            case "a":
+
+            document.getElementById('txt').innerHTML= "Text Matched ! You Entered Character : a "; 
+            break;
+           
+            case "A":
+
+            document.getElementById('txt').innerHTML= "Text Matched ! You Entered Character : A "; 
+            break;
+           
+            case "B":
+
+            document.getElementById('txt').innerHTML= "Text Matched ! You Entered Character : B "; 
+            break;
+           
+
+            case "surekha":
+
+            document.getElementById('txt').innerHTML= "Text Matched ! You Entered Name : surekha"; 
+            break;
+           
+            case "javascript":
+
+            document.getElementById('txt').innerHTML= "Text Matched ! You Entered  : javascript "; 
+            break;
+           
+            default :
+
+            document.getElementById('txt').innerHTML= "Text didn't match.. Better luck next time..";
+break;
+        }
+    }
+        </script>
+</head>
+<body onload="calc()">
+    
+ 
+    <p id = "txt"></p>
+    
+    
+</body>
+</html>

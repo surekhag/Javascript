@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function hello()
+{
+    
+    document.getElementById("p1").innerHTML = "Paragraph changed.";
+   // document.getElementById("p1").innerHTML = 'Paragraph changed.';
+    
+}
+
+function clickImage()
+{
+var name = prompt("Enter your name","enter your name here");
+
+if (name)
+{
+    alert('Welcome ' + name + '.');
+    document.getElementById('img1').src='../../images/blue-orchids.jpg';
+}
+}
+
+</script>
+</head>
+
+<body>
+
+ Click Image
+<div>
+    <img id="img1" src="../../images/Logo.png" width="10%" title="Click on image" onclick="clickImage()"/> 
+    
+    <img id="img2" src="../../images/blue-orchids.jpg" width="10%" title="Click on image - Nothing happens" onclick=""/>
+</div>
+
+<br/>
+
+<br/>
+
+<p id="p1"> TEST text</p>
+<button type="button" onclick="hello()">Click me !</button>
+
+</body>
+</html> 
