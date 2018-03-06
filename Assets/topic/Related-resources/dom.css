@@ -1,0 +1,18 @@
+    .dec
+    {
+        border-color: rgb(212, 64, 108);
+        border-width: 1px;
+        border-style: ridge;
+        padding: 4px;
+        background-color: burlywood;
+    }
+
+    .hover
+    {
+        border-color: rgb(212, 64, 108);
+        border-width: 1px;
+        border-style: ridge;
+        padding: 4px;
+        background-color: burlywood;
+        background-color: brown;
+    }

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Accessing  HTML Elements</title>
+    <h1><strong> HTML elements using document.getElementById and document.getElementsByTagName </strong></h1>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="../Related-resources/default.css" />
+    <script>
+    //using document.getElementById
+    function check_steps()
+    {
+        for(var i=1; i<=document.getElementsByTagName('p').length;i++)
+        {
+     var a="sc"+i;
+     console.log(a);
+        var msg= document.getElementById(a).innerHTML;
+        console.log(msg);
+        document.getElementById('sc'+i).innerHTML=    msg+" Accessed";
+    }
+    }
+
+//Using document.getElementsByTagName
+    function reset()
+    {
+//var msg= "Length of tag is " + document.getElementsByTagName('div').length+ "Type of tag is "+ document.getElementsByTagName('div').entries;
+//document.getElementsByTagName('p')[0].innerHTML= "Step 1"
+
+for(var i=1; i<=document.getElementsByTagName('p').length;i++)
+        {
+     var a="sc"+i;
+     console.log(a);
+        var msg= document.getElementById(a).innerHTML;
+        console.log(msg);
+        //document.getElementById('sc'+i).innerHTML=    "Step "+i;
+        document.getElementsByTagName('p')[i-1].innerHTML="Step "+i;
+    }
+
+    }
+    
+    </script>
+</head>
+<body> 
+<div>
+<p id="sc1">Step  1  </p>
+<p id="sc2">Step  2 </p>
+<p id="sc3">Step  3  </p>
+<p id="sc4">Step  4 </p>
+<p id="sc5">Step  5 </p>
+<p id="sc6">Step  6 </p>
+<p id="sc7">Step  7 </p>
+<p id="sc8">Step  8 </p>
+<span><input type="button" value="Check Steps" onclick="check_steps()"></span> 
+
+<span><input type="button" value="Reset" onclick="reset()"></div></span>
+
+
+</body>
+</html>

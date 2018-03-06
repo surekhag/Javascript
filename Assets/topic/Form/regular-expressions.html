@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link type="text/css" rel="stylesheet" href="../Related-resources/default.css" />
+    <title>Regular Expresions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+        
+</head>
+<body>
+    
+<h1>Bean  Machine </h1><br/><br/>
+Fill any one form among two <br/><br/>
+
+A. GET METHOD : Check URL <br/><br/><br/>
+<form method="post">
+
+    <select name="beans">
+            <option value="brown"> Brown Bolivia</option>
+        <option value="house">House Blend </option>
+<option value="Kenya">Kenya</option>
+<option value="organic">Organic Guatemala</option>
+
+</select><br/> <br/>
+Type : <br/>
+<input type="radio" name="beantype" value="whole" />Whole bean  <br/>
+<input type="radio" name="beantype" value="ground" />Ground   <br/><br/>
+
+
+Extras :<br/>
+<input type="checkbox" name="extras[]" value="giftwrap" checked />Gift Wrap <br/>
+<input type="checkbox" name="extras[]" value="catalog" />Include catalog with Order <br/><br/>
+
+Ship to : <br/>
+Name: <input id="name1" type="text" name="shipname" onblur="validateShipName(this.form, document.getElementById('val_shipname'))" /><span id ="val_shipname"></span><br /><br />
+Address: <input type="text" name="address" onblur="validateAddress(this.form, document.getElementById('val_add'))"/><span id ="val_add"></span> <br /><br />
+City: <input type="text" name="city" onblur="validateCity(this.form, document.getElementById('val_city'))" /> <span id ="val_city"></span><br /> <br /> 
+State: <input type="text" name="state" onblur="validateState(this.form, document.getElementById('val_state'))"/> <span id ="val_state"></span> <br /><br />
+Zip: <input type="text" name="zip" onblur="validateZip(this.form, document.getElementById('val_zip'))" /> <span id ="val_zip"></span> <br /><br />
+
+Customer Comments :<br/><br/>
+<textarea name="comments" rows="8" cols"20">  </textarea><br/>
+<br/><br/>
+<input type="submit" value="Order Now" />
+
+</form>
+
+
+<script>
+     // action="http://www.starbuzzcoffee.com/processorder.php"
+// check if data exist in fields
+
+function validateNotEmpty1(input, label)
+{
+    if(input=="")
+    {  
+       //label="Please enter value";   THIS IS DOM OBJECT
+       
+       label.innerHTML= "Please enter value";
+
+       var a= label.innerHTML;
+       //console.log(input);
+       console.log(label);
+//    return label; 
+    }
+}
+
+    function validateShipName(theForm, label)
+    {
+        
+    //var regex=/^\/;
+    var msg= theForm["shipname"].value;
+    //console.log(validateNotEmpty1(msg,label));
+    //label.innerHTML=validateNotEmpty1(msg,label);
+    validateNotEmpty1(msg,label);
+    }
+
+    
+    function validateAddress(theForm, label)
+    {
+    var msg= theForm["address"].value;
+    label.innerHTML=validateNotEmpty(msg,label);
+    }
+    
+ 
+    function validateCity(theForm, label)
+    {
+    var msg= theForm["city"].value;
+    label.innerHTML=validateNotEmpty(msg,label);
+    }
+    
+    function validateState(theForm,label)
+    {
+    var msg= theForm["state"].value;
+    label.innerHTML=validateNotEmpty(msg,label);
+    
+    
+    }
+ 
+    
+    function validateZip(theForm,label)
+    {
+    var msg= theForm["zip"].value;
+    //var regex=/\d{5}/;
+ var regex=/^\d{5,5}$/;
+// var regex=/^\d{5}|\d{5}$/;
+ if(msg=="")
+ {
+    label.innerHTML=validateNotEmpty(msg,label);
+    return false;
+ }
+ else
+ {
+   if(!regex.test(msg))
+    {     
+     //return false;
+     label.innerHTML= "Enter 5 digits";
+    return false;
+    }
+    else{
+        label.innerHTML= "";
+        return true;
+    }  
+        
+
+ } 
+}
+
+
+
+    
+function validateNotEmpty(input, label)
+{
+    if(input=="")
+    {  
+       label="Please enter value";
+       return label; 
+    }
+
+}
+    </script>
+</body>
+</html>

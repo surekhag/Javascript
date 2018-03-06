@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DOM Introduction </title>
+    <h1> Adding tracking history - Add elements and nodes dynamically</h1>
+    <link type="text/css" rel="stylesheet" href="../Related-resources/dom.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script>
+    var count=1;
+function changeScene(decision)
+{
+var msg="";
+choice=decision;
+switch(choice)
+{
+case 1:
+msg="Option 1 was selected !";
+//document.getElementById('scenetext').innerHTML=msg;
+document.getElementById('opt2').style.visibility="hidden";
+document.getElementById('opt1').firstChild.nodeValue="Go Ahead !";
+//document.getElementById('scenetext1').firstChild.nodeValue= msg;
+
+add(choice+2);
+add(choice+3);
+track(choice);
+break;
+case 2:
+msg="Option 2 was selected !";
+//document.getElementById('scenetext').innerHTML=msg;
+document.getElementById('opt1').style.visibility="hidden";
+document.getElementById('opt2').firstChild.nodeValue="Go Ahead !";
+//document.getElementById('scenetext1').firstChild.nodeValue= msg;
+add(choice+1);
+add(choice+2);
+track(choice);
+
+break;
+}
+function track(step)
+{
+    var elemt=document.createElement('p');
+    var name1=count+" : Step "+step+ " was slected "+"/n" +" 123";
+    count++;
+    var child=document.createTextNode(name1);
+    elemt.appendChild(child);
+    document.getElementById('history').appendChild(elemt);
+
+}
+
+function add(a)
+{
+    var elemt=document.createElement('span');
+    var name1="Step "+a;
+    var child=document.createTextNode(name1);
+    elemt.appendChild(child);
+    elemt.className="dec";
+    document.getElementById('demo').appendChild(elemt);
+    
+   
+
+    //child.className="dec";
+    //child.style.className="dec";
+     elemt.style.className="dec";
+}
+//document.getElementById('scenetext1').nodeValue=msg;
+//console.log(document.getElementById('scenetext1').nodeValue)
+//console.log(document.getElementsByTagName('scenetext1')
+
+
+
+//alert(msg);
+}
+
+/*function modily()
+{
+    //capture node
+    var node=document.getElementById('desc');
+    //remove all child nodes of node
+    while(node.firstChild)
+    {
+        node.removeChild(node.firstChild);
+    }
+    var msg="NODE TEXT Modified: Yor are on a bridge.Please choose option below."
+    node.appendChild(document.createTextNode(msg));
+}
+*/
+</script>
+</head>
+<body>
+    <div id="demo">
+    <p id="desc">NODE TEXT : Yor are <strong>on a bridge</strong>.Please choose option below.</p>
+    
+    <p> 1. Walking across bridge 2.Gaze into Steam</p>
+    <span id='opt1' class="dec" onclick="changeScene(1)" >Select 1</span>
+    <span id='opt2' class="dec" onclick="changeScene(2)" >Select 2 </span> <br><br>
+    
+            <!--
+    innerHTML : <p id="scenetext"></p>
+            -->
+    
+</div>
+<!--
+    .nodeValue: <p id="scenetext1">This text is first child of paragraph tag </p>
+-->
+    
+<div id='history'> </div>
+     <script>
+    window.onload= function()
+    {
+    document.getElementById('opt2').onmouseover=function()
+    {
+        document.getElementById('opt2').className="hover";
+            
+    }
+
+    document.getElementById('opt2').onmouseout=function()
+    {
+        document.getElementById('opt2').className="dec";
+            
+    }
+
+    document.getElementById('opt1').onmouseover=function()
+    {
+        document.getElementById('opt1').className="hover";
+            
+    }
+
+    document.getElementById('opt1').onmouseout=function()
+    {
+        document.getElementById('opt1').className="dec";
+            
+    }
+
+    }
+    
+    
+    </script>
+</body>
+</html>

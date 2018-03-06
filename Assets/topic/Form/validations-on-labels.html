@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns=“http://www.w3.org/1999/xhtml” lang=“en” xml:lang=“en” >
+<head >
+        <link type="text/css" rel="stylesheet" href="../Related-resources/default.css" />
+    <title>    
+The way Form works 
+</title>
+
+
+</script>
+</head>
+<body>
+
+<h1>Bean  Machine </h1><br/><br/>
+Fill any one form among two <br/><br/>
+
+A. GET METHOD : Check URL <br/><br/><br/>
+<form method="post">
+
+    <select name="beans">
+            <option value="brown"> Brown Bolivia</option>
+        <option value="house">House Blend </option>
+<option value="Kenya">Kenya</option>
+<option value="organic">Organic Guatemala</option>
+
+</select><br/> <br/>
+Type : <br/>
+<input type="radio" name="beantype" value="whole" />Whole bean  <br/>
+<input type="radio" name="beantype" value="ground" />Ground   <br/><br/>
+
+
+Extras :<br/>
+<input type="checkbox" name="extras[]" value="giftwrap" checked />Gift Wrap <br/>
+<input type="checkbox" name="extras[]" value="catalog" />Include catalog with Order <br/><br/>
+
+Ship to : <br/>
+Name: <input id="name1" type="text" name="shipname" onblur="validateShipName(this.form, document.getElementById('val_shipname'))" /><span id ="val_shipname"></span><br /><br />
+Address: <input type="text" name="address" onblur="validateAddress(this.form)"/><span id ="val_add"></span> <br /><br />
+City: <input type="text" name="city" onblur="validateCity(this.form)" /> <span id ="val_city"> <br /></span><br />
+State: <input type="text" name="state" onblur="validateState(this.form)"/> <span id ="val_state"></span> <br /><br />
+Zip: <input type="text" name="zip" onblur="validateZip(this.form)" /> <span id ="val_zip"></span> <br /><br />
+
+Customer Comments :<br/><br/>
+<textarea name="comments" rows="8" cols"20">  </textarea><br/>
+<br/><br/>
+<input type="submit" value="Order Now" />
+
+</form>
+
+
+<script type="text/javascript">
+
+    // action="http://www.starbuzzcoffee.com/processorder.php"
+
+function validateShipName(input_field, lbl_txt)
+{
+    console.log(input_field + lbl_txt + "document.getElementById('val_shipname')");
+//alert(theForm["shipname"].value);
+
+var msg= input_field["shipname"].value;
+//if((isNaN(lbl_txt))|| (lbl_txt!=null))
+//alert("Please enter valid Shipping address - Name");
+
+if(msg =="")
+document.getElementById("val_shipname").innerHTML="Enter valid Name" ;
+else 
+document.getElementById("val_shipname").innerHTML="";
+
+}
+
+
+function validateAddress(theForm)
+{
+var msg= theForm["address"].value;
+if(msg=="")
+//alert("Please enter valid address");
+document.getElementById("val_add").innerHTML="Enter valid Address";
+else
+document.getElementById("val_add").innerHTML="";
+
+}
+
+function validateCity(theForm)
+{
+var msg= theForm["city"].value;
+if(msg=="")
+//alert("Please enter valid city");
+document.getElementById("val_city").innerHTML="Enter valid City";
+else
+document.getElementById("val_city").innerHTML="";
+}
+
+function validateState(theForm)
+{
+var msg= theForm["state"].value;
+if(msg=="")
+//alert("Please enter valid state");
+document.getElementById("val_state").innerHTML="Enter valid State";
+else
+
+document.getElementById("val_state").innerHTML="";
+}
+
+
+function validateZip(theForm)
+{
+var msg= theForm["zip"].value;
+if(msg=="")
+//alert("Please enter valid zip code");
+document.getElementById("val_zip").innerHTML="Enter valid Zip Code";
+else
+document.getElementById("val_zip").innerHTML="";
+if(isNaN(msg))
+document.getElementById("val_zip").innerHTML="Enter only Numbers";
+
+
+
+}
+
+</script>
+
+
+    </body>
+    </html>

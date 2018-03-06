@@ -30,11 +30,11 @@ Extras :<br/>
 <input type="checkbox" name="extras[]" value="catalog" />Include catalog with Order <br/><br/>
 
 Ship to : <br/>
-Name: <input id="name1" type="text" name="shipname" onblur="validateShipName(this.form)"/> <br /><br />
-Address: <input type="text" name="address" onblur="validateAddress(this.form)"/> <br /><br />
-City: <input type="text" name="city" onblur="validateCity(this.form)" /> <br /><br />
-State: <input type="text" name="state" onblur="validateState(this.form)"/> <br /><br />
-Zip: <input type="text" name="zip" onblur="validateZip(this.form)" /> <br /><br />
+Name: <input id="name1" type="text" name="shipname" onblur="validateIsEmpty(this.field);"/> <br /><br />
+Address: <input type="text" name="address" onblur="validateIsEmpty(this.field);"/> <br /><br />
+City: <input type="text" name="city" onblur="validateIsEmpty(this.field);" /> <br /><br />
+State: <input type="text" name="state" onblur="validateIsEmpty(this.field);"/> <br /><br />
+Zip: <input type="text" name="zip" onblur="validateIsEmpty(this.field);" /> <br /><br />
 
 Customer Comments :<br/><br/>
 <textarea name="comments" rows="8" cols"20">  </textarea><br/>
@@ -45,24 +45,22 @@ Customer Comments :<br/><br/>
 
 
 <script>
-/*
-window.onload=function {
 
-    display(form1);
-    validateAddress(form1);
-    validateCity(form1);
-}*/
-    // action="http://www.starbuzzcoffee.com/processorder.php"
-function validateShipName(theForm)
+function validateIsEmpty(field)
 {
-    console.log()
-//alert(theForm["shipname"].value);
+    console.log(field)
 
-var msg= theForm["shipname"].value;
-if(msg=="")
-alert("Please enter valid Shipping address - Name");
+
+if(field==null)
+{
+
+    alert("Please enter valid value");
 }
-
+/*if(msg=="")
+alert("Please enter valid Shipping address - Name");
+*/
+}
+/*
 function validateAddress(theForm)
 {
 var msg= theForm["address"].value;
@@ -91,6 +89,7 @@ var msg= theForm["zip"].value;
 if(msg=="")
 alert("Please enter valid zip code");
 }
+*/
 </script>
 
 

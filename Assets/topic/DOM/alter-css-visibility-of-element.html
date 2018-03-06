@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DOM Introduction </title>
+    <h1>Alter CSS: Classname using using DOM</h1>
+    <link type="text/css" rel="stylesheet" href="../Related-resources/dom.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <script>
+    
+function changeScene(decision)
+{
+var msg="";
+choice=decision;
+switch(choice)
+{
+case 1:
+msg="Option 1 was selected !";
+document.getElementById('scenetext').innerHTML=msg;
+document.getElementById('opt2').style.visibility="hidden";
+document.getElementById('opt1').firstChild.nodeValue="Go Ahead !";
+break;
+case 2:
+msg="Option 2 was selected !";
+document.getElementById('scenetext').innerHTML=msg;
+document.getElementById('opt1').style.visibility="hidden";
+document.getElementById('opt2').firstChild.nodeValue="Go Ahead !";
+
+break;
+}
+
+//document.getElementById('scenetext1').nodeValue=msg;
+//console.log(document.getElementById('scenetext1').nodeValue)
+//console.log(document.getElementsByTagName('scenetext1')
+document.getElementById('scenetext1').firstChild.nodeValue= msg;
+
+
+//alert(msg);
+}
+
+/*function modily()
+{
+    //capture node
+    var node=document.getElementById('desc');
+    //remove all child nodes of node
+    while(node.firstChild)
+    {
+        node.removeChild(node.firstChild);
+    }
+    var msg="NODE TEXT Modified: Yor are on a bridge.Please choose option below."
+    node.appendChild(document.createTextNode(msg));
+}
+*/
+</script>
+</head>
+<body>
+    <div>
+    <p id="desc">NODE TEXT : Yor are <strong>on a bridge</strong>.Please choose option below.</p>
+    
+    <p> 1. Walking across bridge 2.Gaze into Steam</p>
+    <span id='opt1' class="dec" onclick="changeScene(1)" >Select 1</span>
+    <span id='opt2' class="dec" onclick="changeScene(2)" >Select 2 </span> <br><br>
+    
+            
+    innerHTML : <p id="scenetext"></p>
+    
+</div>
+    .nodeValue: <p id="scenetext1">This text is first child of paragraph tag </p>
+
+<hr>
+<!--
+<div>
+        <p id="desc">NODE TEXT : Yor are <strong>on a bridge</strong>.Please choose option below.</p>
+        
+        <p> 1. Walking across bridge 2.Gaze into Steam</p>
+        <span id='opt1' class="dec" onmouseover="this.className='hover'" onmouseout="this.className='dec'" onclick="changeScene(1)" >Select 1</span>
+        <span id='opt2' class="dec" onmouseover="this.className='hover'" onmouseout="this.className='dec'" onclick="changeScene(1)">Select 2 </span> <br><br>              
+</div>
+-->
+        
+
+
+
+
+    <script>
+    window.onload= function()
+    {
+    document.getElementById('opt2').onmouseover=function()
+    {
+        document.getElementById('opt2').className="hover";
+            
+    }
+
+    document.getElementById('opt2').onmouseout=function()
+    {
+        document.getElementById('opt2').className="dec";
+            
+    }
+
+    document.getElementById('opt1').onmouseover=function()
+    {
+        document.getElementById('opt1').className="hover";
+            
+    }
+
+    document.getElementById('opt1').onmouseout=function()
+    {
+        document.getElementById('opt1').className="dec";
+            
+    }
+
+    }
+    
+    
+    </script>
+</body>
+</html>
